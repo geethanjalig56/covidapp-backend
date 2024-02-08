@@ -13,6 +13,13 @@ router.get("/view", async(req,res)=>{
     let data = await patientModel.find()
     res.json(data)
 
+}) //patient view
+
+//patientsearch
+router.post("/search", async(req,res)=>{
+    let input = req.body 
+    let data = await patientModel.find(input)
+    res.json(data)
 })
 
 
